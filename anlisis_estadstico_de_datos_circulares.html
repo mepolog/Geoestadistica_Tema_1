@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Análisis estadístico de datos circulares | Tema_1 </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="María Eugenia Polo" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-8"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">Tema_1</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 1: Calidad de la información geográfica</a></li>
+   <li><a href="introduccin_tema_1.html" class="no-ch">Introducción Tema 1</a></li>
+   <li><a href="comenzando_con_r_y_rstudio.html" class="no-ch">Comenzando con R y RStudio</a></li>
+   <li><a href="datos_para_desarrollar_el_tema.html" class="no-ch">Datos para desarrollar el tema</a></li>
+   <li><a href="anlisis_estadstico_de_datos_escalares.html" class="no-ch">Análisis estadístico de datos escalares</a></li>
+   <li id="active"><a href="anlisis_estadstico_de_datos_circulares.html" class="active no-ch">Análisis estadístico de datos circulares</a></li>
+   <li><a href="para_ampliar_conocimientos.html" class="no-ch">Para ampliar conocimientos</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="anlisis_estadstico_de_datos_escalares.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="para_ampliar_conocimientos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Análisis estadístico de datos circulares</h1></header>
+<article class="iDevice_wrapper textIdevice em_iDevice em_iDevice_udl_exp_actividad" id="id13">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header" style="background-image:url(icon_udl_exp_actividad.svg)"><h1 class="iDeviceTitle">Datos vectoriales. Datos circulares</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta13_122_2" class="block iDevice_content">
+<div class="exe-text"><p>Una magnitud vectorial es aquella que, además de un valor numérico y su unidad (módulo) tiene una dirección y sentido, por ejemplo, la velocidad y dirección del viento. Esa dirección y sentido se analizarán como datos circulares. </p>
+<p>La llamada estadística circular o el análisis estadístico de datos circulares permite el tratamiento de datos angulares. Mientras que los datos lineales se presentan en la recta real, los datos circulares lo hacen en un círculo de radio unidad.</p>
+<p>En el texto siguiente presentamos las principales medidas descriptivas para datos circulares y realización de gráficos.</p>
+<p>Para realizar la práctica en RStudio será necesario:</p>
+<ul>
+<li>Descargar el paquete de R denominado <span style="color: #0000ff; background-color: #ffffff;"><a href="https://unexes-my.sharepoint.com/:u:/g/personal/mepolo_unex_es/EQTOsUcq1SZPvV48qSz4CMcBae2wfhkEkGbDD_ZRw0UBbA?e=M6iImh" onclick="window.open('https://unexes-my.sharepoint.com/:u:/g/personal/mepolo_unex_es/EQTOsUcq1SZPvV48qSz4CMcBae2wfhkEkGbDD_ZRw0UBbA?e=M6iImh','eXeLearningPopup','width=600,height=400,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-200)+'');return false;" style="color: #0000ff; background-color: #ffffff;">VecStatGraphs2D</a></span></li>
+<li>Seguir el script denominado "<span style="color: #0000ff;"><a href="https://unexes-my.sharepoint.com/:u:/g/personal/mepolo_unex_es/Eb-vbbKeW_tOg6PeFJTwYVYBwU5p93ZhQruwvK3MsX7NcQ?e=XLlRbp" onclick="window.open('https://unexes-my.sharepoint.com/:u:/g/personal/mepolo_unex_es/Eb-vbbKeW_tOg6PeFJTwYVYBwU5p93ZhQruwvK3MsX7NcQ?e=XLlRbp','eXeLearningPopup','width=600,height=400,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-200)+'');return false;" style="color: #0000ff;">script_vectorial.R</a></span>" .</li>
+<li>Descargar la carpeta de datos llamada <span style="color: #0000ff;"><a href="https://unexes-my.sharepoint.com/:f:/g/personal/mepolo_unex_es/EnzbbYSQzQtBifOgfvL59gABEdFAP1TjETDutg0mtBwuTQ?e=uFgGsa" onclick="window.open('https://unexes-my.sharepoint.com/:f:/g/personal/mepolo_unex_es/EnzbbYSQzQtBifOgfvL59gABEdFAP1TjETDutg0mtBwuTQ?e=uFgGsa','eXeLearningPopup','width=600,height=400,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-200)+'');return false;" style="color: #0000ff;">vientos</a></span>.</li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FileAttachIdeviceInc em_iDevice em_iDevice_assignment" id="id14">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Datos circulares</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta14_82" class="block iDevice_content">
+
+</div>
+<ul class='exeFileList'><li><a href='Datos_circulares.pdf' target='_blank'>Datos_circulares.pdf<span> (Ventana nueva)</span></a></li>
+</ul></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="anlisis_estadstico_de_datos_escalares.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="para_ampliar_conocimientos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>
